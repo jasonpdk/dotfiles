@@ -1,0 +1,10 @@
+# ls on dir change
+#function chpwd() {
+#    emulate -L zsh
+#    ls -a
+#}
+
+function cdl () {
+    cd $1
+    ls -a
+}
