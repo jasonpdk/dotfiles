@@ -1,0 +1,39 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'morhetz/gruvbox'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set number relativenumber
+set laststatus=2
+
+if !has('gui_running')
+  set t_Co=256
+endif
+
+colorscheme gruvbox
+set bg=dark
+
+nmap <C-\> :NERDTreeToggle<CR>
+nmap <C-m> :NERDTreeFind<CR>
+
+nmap <C-t> :tabnew<CR>
+nmap <C-l> :tabnext<CR>
+nmap <C-h> :tabprevious<CR>
+
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>k
+
+let NERDTreeMapOpenInTab='t'
