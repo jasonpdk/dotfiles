@@ -114,5 +114,3 @@ map  <C-k> :tabnew<CR>
 
 set path+=**
 command! MakeTags !ctags -R .
-
-set paste
