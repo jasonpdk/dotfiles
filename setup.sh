@@ -4,7 +4,7 @@
 sudo dnf update -y
 
 sudo dnf install -y zsh vim tmux git
-cp ./vim/.vimrc ./tmux.conf ~
+cp ./vim/.vimrc ./.tmux.conf ~
 
 INSTALL_TYPE=$1
 
@@ -94,6 +94,7 @@ then
         " >> ~/.local/share/applications/postman.desktop
 
     elif [ "$INSTALL_TYPE" == "media" ]
+    then
         sudo dnf install -y kodi
     fi
 fi
