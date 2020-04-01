@@ -3,14 +3,11 @@
 # update first
 sudo dnf update -y
 
-sudo dnf install -y zsh vim tmux git pass
+sudo dnf install -y zsh vim tmux git
 mv ./vim/.vimrc ./tmux.conf ~
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mv ./zsh/.zshrc ~
-
-# TODO pass init needs gpg key
-git clone git@github.com:jasonpdk/pass.git ~/.password-store
 
 INSTALL_TYPE=$1
 
@@ -35,7 +32,11 @@ then
     dconf write /org/gnome/desktop/interface/clock-show-date true
     dconf write /org/gnome/desktop/interface/clock-show-seconds true
 
-    sudo dnf install -y filezilla vlc firefox gparted
+    sudo dnf install -y filezilla vlc firefox gparted pass
+
+    # Pass
+    # TODO pass init needs gpg key
+    git clone git@github.com:jasonpdk/pass.git ~/.password-store
 
     # Chrome
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
