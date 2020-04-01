@@ -33,6 +33,7 @@ then
 
     # Pass
     # TODO pass init needs gpg key
+    rm -r  ~/.password-store
     git clone git@github.com:jasonpdk/pass.git ~/.password-store
 
     # Chrome
