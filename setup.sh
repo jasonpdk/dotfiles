@@ -18,11 +18,11 @@ then
     wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
     chmod +x gnome-shell-extension-installer
     
-    gnome-shell-extension-installer 307 # Dash to dock
-    gnome-shell-extension-installer 19 # User themes
-    gnome-shell-extension-installer 750 # Open weather
+    ./gnome-shell-extension-installer 307 # Dash to dock
+    ./gnome-shell-extension-installer 19 # User themes
+    ./gnome-shell-extension-installer 750 # Open weather
 
-    dconf write /org/gnome/desktop/wm/preferences/button-layout 'appmenu:minimize,maximize,close'
+    dconf write /org/gnome/desktop/wm/preferences/button-layout "'appmenu:minimize,maximize,close'"
     dconf write /org/gnome/desktop/interface/enable-hot-corners true
     dconf write /org/gnome/desktop/interface/show-battery-percentage true
     dconf write /org/gnome/desktop/interface/clock-show-weekday true
