@@ -8,7 +8,7 @@ cp ./vim/.vimrc ./.tmux.conf ~
 
 INSTALL_TYPE=$1
 
-if [ "$INSTALL_TYPE" == "full" || "$INSTALL_TYPE" == "media" ]
+if [ "$INSTALL_TYPE" == "full" ] || [ "$INSTALL_TYPE" == "media" ]
 then
     # RPM Fusion repo
     sudo dnf install -y  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
