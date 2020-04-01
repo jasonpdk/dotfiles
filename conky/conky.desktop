@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Conky
+GenericName=background monitor
+Comment=System monitoring
+Exec=conky -c /home/jason/.config/.conkyrc &
+Terminal=false
+Type=Application
+Icon=conky
+Categories=System;
+StartupNotify=false
