@@ -4,10 +4,10 @@
 sudo dnf update -y
 
 sudo dnf install -y zsh vim tmux git
-mv ./vim/.vimrc ./tmux.conf ~
+cp ./vim/.vimrc ./tmux.conf ~
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv ./zsh/.zshrc ~
+cp ./zsh/.zshrc ~
 
 INSTALL_TYPE=$1
 
@@ -20,7 +20,7 @@ then
     # Install gome extensions
     wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
     chmod +x gnome-shell-extension-installer
-
+    
     gnome-shell-extension-installer 307 # Dash to dock
     gnome-shell-extension-installer 19 # User themes
     gnome-shell-extension-installer 750 # Open weather
@@ -53,8 +53,8 @@ then
         sudo dnf install -y thunderbird gnome-tweak-tool conky gimp
 
         # Conky
-        mv ./conky/.conkyrc ~/.config/.conkyrc
-        mv ./conky/conky.desktop ~/.config/autostart/conky.desktop
+        cp ./conky/.conkyrc ~/.config/.conkyrc
+        cp ./conky/conky.desktop ~/.config/autostart/conky.desktop
 
         # insync
         sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
