@@ -6,9 +6,6 @@ sudo dnf update -y
 sudo dnf install -y zsh vim tmux git
 cp ./vim/.vimrc ./tmux.conf ~
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp ./zsh/.zshrc ~
-
 INSTALL_TYPE=$1
 
 if [ "$INSTALL_TYPE" == "full" || "$INSTALL_TYPE" == "media" ]
@@ -100,3 +97,6 @@ then
         sudo dnf install -y kodi
     fi
 fi
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp ./zsh/.zshrc ~
