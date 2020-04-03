@@ -4,10 +4,14 @@
 sudo dnf update -y
 
 sudo dnf install -y zsh vim tmux git
+curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+sh install.sh --unattended
+cp ./zsh/.zshrc ~
 
 # Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp ./vim/.vimrc ./.tmux.conf ~
+vim +PluginInstall +qall
 
 INSTALL_TYPE=$1
 
@@ -102,6 +106,3 @@ then
         sudo dnf install -y kodi
     fi
 fi
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp ./zsh/.zshrc ~
