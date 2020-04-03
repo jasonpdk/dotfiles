@@ -3,10 +3,11 @@
 # update first
 sudo dnf update -y
 
-sudo dnf install -y zsh vim tmux git
+sudo dnf install -y zsh vim tmux git util-linux-user
 curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 sh install.sh --unattended
 cp ./zsh/.zshrc ~
+chsh -s $(which zsh)
 
 # Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
