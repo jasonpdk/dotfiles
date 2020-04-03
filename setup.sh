@@ -29,7 +29,7 @@ then
     dconf write /org/gnome/desktop/interface/clock-show-date true
     dconf write /org/gnome/desktop/interface/clock-show-seconds true
 
-    sudo dnf install -y filezilla vlc firefox gparted pass
+    sudo dnf install -y filezilla vlc firefox gparted pass conky
 
     # Pass
     # TODO pass init needs gpg key
@@ -39,6 +39,10 @@ then
     # Chrome
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
     sudo dnf install -y ./google-chrome-stable_current_x86_64.rpm
+    
+    # Conky
+    cp ./conky/.conkyrc ~/.config/.conkyrc
+    cp ./conky/conky.desktop ~/.config/autostart/conky.desktop
 
     if [ "$INSTALL_TYPE" == "full" ]
     then
@@ -48,11 +52,7 @@ then
         sudo dnf check-update
         sudo dnf install -y code
 
-        sudo dnf install -y thunderbird gnome-tweak-tool conky gimp
-
-        # Conky
-        cp ./conky/.conkyrc ~/.config/.conkyrc
-        cp ./conky/conky.desktop ~/.config/autostart/conky.desktop
+        sudo dnf install -y thunderbird gnome-tweak-tool gimp
 
         # insync
         sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
