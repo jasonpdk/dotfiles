@@ -4,6 +4,9 @@
 sudo dnf update -y
 
 sudo dnf install -y zsh vim tmux git
+
+# Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp ./vim/.vimrc ./.tmux.conf ~
 
 INSTALL_TYPE=$1
@@ -33,7 +36,7 @@ then
 
     # Pass
     # TODO pass init needs gpg key
-    rm -r  ~/.password-store
+    sudo rm -r  ~/.password-store
     git clone git@github.com:jasonpdk/pass.git ~/.password-store
 
     # Chrome
@@ -52,12 +55,13 @@ then
 
         # Conky
         cp ./conky/.conkyrc ~/.config/.conkyrc
+        mkdir ~/.config/autostart
         cp ./conky/conky.desktop ~/.config/autostart/conky.desktop
 
         # insync
         sudo rpm --import https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
 
-        echo "
+        sudo echo "
             [insync]
             name=insync repo
             baseurl=http://yum.insync.io/[DISTRIBUTION]/$releasever/
